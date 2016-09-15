@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+DEFAULT_CHARSET = 'utf-8'
 
 # Application definition
 
@@ -37,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'record.apps.RecordConfig'
+
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -119,3 +123,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+SERVER_PATH=[
+    '/Users/yetongxue/Desktop/my_website/uploads'
+]
+
+MEDIA_ROOT = SERVER_PATH[0]
+
+IMAGE_CACHE_ROOT='/Users/yetongxue/Desktop/my_website/uploads'
+
+MEDIA_URL = '/pictures/'
