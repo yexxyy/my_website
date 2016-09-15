@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.views.decorators.http import require_GET
 import  os
 
-from image.templatetags import img
+
 
 
 def index(request):
@@ -14,16 +14,8 @@ def index(request):
 
 @require_GET
 def get_pictures(request, file_path):
-
-    print 'request'+request
-    print 'file_path'+file_path
-
-
     path = os.path.join('/Users/yetongxue/Desktop/my_website/uploads', file_path)
-    response = HttpResponse(mimetype="image/gif")
     img = Image.open(path)
-    img.save(response,'jpg')
-
-
-
+    response = HttpResponse(content_type='image/jpeg')
+    img.convert('RGB').save(response, 'jpeg')
     return response

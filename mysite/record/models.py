@@ -1,11 +1,9 @@
 #-*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
-
 from django.db import models, utils
 import os
 from uuid import uuid4
-
 from django.utils.encoding import python_2_unicode_compatible
 
 
