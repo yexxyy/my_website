@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*-
+# coding=utf-8
 
 from __future__ import unicode_literals
 from ckeditor_uploader.fields import RichTextUploadingField
@@ -46,13 +46,14 @@ class Record(models.Model):
 
     def __str__(self):
         return self.title
-
+    def get_banner_url(self):
+        return self.banner.url if self.banner else ''
 
     def to_json(self):
         this={
             'id':self.pk,
             'title':self.title,
-            'banner':self.banner,
+            'banner':self.get_banner_url(),
             'article_description':self.article_description,
             'content':self.content,
             'video':self.video,
