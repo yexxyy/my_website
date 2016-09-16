@@ -4,7 +4,8 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^records/',views.index),
+    url(r'^$',views.index),
+
 
 
 ]

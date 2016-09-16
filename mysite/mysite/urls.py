@@ -23,4 +23,6 @@ urlpatterns = [
     url(r'^$',views.index,name='home'),
     url(r'^resources/(?P<file_path>.*)',views.get_pictures),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+
+    url(r'^records/',include('record.urls')),
 ]
