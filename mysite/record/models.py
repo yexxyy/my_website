@@ -48,3 +48,14 @@ class Record(models.Model):
         return self.title
 
 
+    def to_json(self):
+        this={
+            'id':self.pk,
+            'title':self.title,
+            'banner':self.banner,
+            'article_description':self.article_description,
+            'content':self.content,
+            'video':self.video,
+            'date':self.date,
+        }
+        return this
