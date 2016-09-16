@@ -11,7 +11,6 @@ def index(request):
 	return HttpResponse("IF YOU SEE THIS SENTENCE, THE SERVER IS UP")
 
 
-
 @require_GET
 def get_pictures(request, file_path):
     path = os.path.join(settings.MEDIA_ROOT, file_path)

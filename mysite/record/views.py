@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
 from .models import Record
 
-# Create your views here.
+
 
 #records list
 from django.views.decorators.http import require_GET
