@@ -3,7 +3,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
 from .models import Record
-
+from django.http import Http404
 
 
 #records list
@@ -22,5 +22,14 @@ def index(request):
         'message':'获取记录列表成功',
         'list':json_list,
     })
+
+@require_GET
+def detail(request,id):
+    try:
+        record=Record.objects.get(pk=id)
+    except Record.DoesNotExist:
+        raise Http404('记录不存在')
+
+    return JsonResponse(record.to_json())
 
 
