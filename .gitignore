@@ -92,4 +92,5 @@ ENV/
 
 .idea
 .DS_Store
-
+uploads/*
+*.pyc
