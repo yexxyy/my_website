@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'record.apps.RecordConfig'
+    'record.apps.RecordConfig',
+    'ckeditor',
+	'ckeditor_uploader',
 
 ]
 
@@ -133,4 +135,10 @@ MEDIA_ROOT = SERVER_PATH[0]
 
 IMAGE_CACHE_ROOT='/Users/yetongxue/Desktop/my_website_uploads'
 
-MEDIA_URL = '/pictures/'
+MEDIA_URL = '/resources/'
+
+
+# Ckeditor settings
+CKEDITOR_UPLOAD_PATH = "ckeditor_uploads/"
+CKEDITOR_JQUERY_URL = 'js/jquery.min.js'
+CKEDITOR_IMAGE_BACKEND = 'pillow'
