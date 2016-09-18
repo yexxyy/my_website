@@ -61,6 +61,7 @@ class Record(models.Model):
     def to_json(self):
         this={
             'id':self.pk,
+            'record_type':self.record_type,
             'title':self.title,
             'banner':self.get_banner_url(),
             'article_description':self.article_description,
