@@ -24,6 +24,14 @@ class Record(models.Model):
     class Meta:
         verbose_name='记录'
         verbose_name_plural='我的流水账'
+
+    TYPE_CHOICES = (
+        ('type_video', '视频'),
+        ('type_phtoto', '摄影'),
+        ('type_travel', '游记'),
+        ('type_program', '编程'),
+    )
+    record_type = models.CharField(max_length=20, choices=TYPE_CHOICES, verbose_name='记录类型', blank=True, null=True)
     title=models.CharField(max_length=100,verbose_name='标题')
     banner=models.ImageField(
         upload_to=pic_upload_path,
