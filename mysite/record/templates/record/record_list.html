@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>记录列表</title>
+
+    <!-- Bootstrap -->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- 自定义css -->
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'record/record_list.css' %}" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
+</head>
+<body>
+
+    <!--导航栏-->
+ <nav class="navbar navbar-fixed-top navbar-inverse" id="demo-navbar">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">浏览器介绍</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">综述<span class="sr-only">(current)</span></a></li>
+        <li><a href="#">简述</a></li>
+
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">特点 <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#tab-firefox">Firefox</a></li>
+            <li><a href="#tab-chrome">Chrome</a></li>
+            <li><a href="#tab-safari">Safari</a></li>
+          </ul>
+        </li>
+        <li><a href="#" data-toggle="modal" data-target="#about">关于</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+
+
+
+
+
+
+
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+ 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!--自定义js -->
+    <script src='{% static "record/record.js" %}'></script>
+</body>
+</html>

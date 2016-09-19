@@ -4,13 +4,13 @@ from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
 from .models import Record
 from django.http import Http404
-
+from django.template import loader
 
 #records list
 from django.views.decorators.http import require_GET
 
 @require_GET
-def index(request):
+def get_record_list(request):
     records=Record.objects.all().order_by('-date')
     json_list=[]
     for record in records:
@@ -24,7 +24,7 @@ def index(request):
     })
 
 @require_GET
-def detail(request,id):
+def get_record_detail(request,id):
     try:
         record=Record.objects.get(pk=id)
     except Record.DoesNotExist:
@@ -33,3 +33,10 @@ def detail(request,id):
     return JsonResponse(record.to_json())
 
 
+def get_record_list_view(request):
+
+    # template = loader.get_template('record/record_list.html')
+    # return HttpResponse(template.render(request))
+
+    #或者:
+    return render(request,'record/record_list.html')
