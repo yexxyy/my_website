@@ -31,24 +31,29 @@ class Record(models.Model):
         ('type_travel', '游记'),
         ('type_program', '编程'),
     )
-    record_type = models.CharField(max_length=20, choices=TYPE_CHOICES, verbose_name='记录类型', blank=True, null=True)
+    record_type = models.CharField(max_length=20, choices=TYPE_CHOICES, verbose_name='类型',blank=False)
     title=models.CharField(max_length=100,verbose_name='标题')
     banner=models.ImageField(
         upload_to=pic_upload_path,
-        verbose_name='顶部封面',
+        verbose_name='封面',
+        null=True,
+        blank=True,
     )
     article_description=models.TextField(
-        verbose_name='全文概览',
+        verbose_name='概览',
+        null=True,
         blank=True,
     )
     content = RichTextUploadingField(
-		verbose_name='正文',
-		null=True,
-		blank=True
-	)
+        verbose_name='正文',
+        null=True,
+        blank=True,
+    )
     video = models.CharField(
         max_length=200,
-        verbose_name='视频链接'
+        verbose_name='视频链接',
+        null=True,
+        blank=True,
     )
     date = models.DateField(verbose_name='发布日期')
 
