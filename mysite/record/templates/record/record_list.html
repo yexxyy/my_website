@@ -38,25 +38,17 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">浏览器介绍</a>
+      <a class="navbar-brand" href="#">我的流水账</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">综述<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">简述</a></li>
-
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">特点 <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#tab-firefox">Firefox</a></li>
-            <li><a href="#tab-chrome">Chrome</a></li>
-            <li><a href="#tab-safari">Safari</a></li>
-          </ul>
-        </li>
+        <li><a href="#">视频</a></li>
+        <li><a href="#">摄影</a></li>
+        <li><a href="#">游记</a></li>
+        <li><a href="#">编程</a></li>
         <li><a href="#" data-toggle="modal" data-target="#about">关于</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -68,13 +60,33 @@
 
 
 
-
+<!--关于弹出框-->
+<div class="modal fade" id="about">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">关于</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+          梦思特科技（成都）有限公司于2014年6月注册成立，是由日本monstar-lab公司在中国的全资子公司，本公司主要致力于手机应用程序和互联网软件的研发，能为客户提供从Iphone软件，android软件到大型J2EE软件的整体解决方案。梦思特科技（成都）有限公司专注于新技术，新应用的发展，致力于成为国际领先的一站式移动应用解决方案提供商。
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">了解</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 
 
     <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
- 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+ 	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <!--自定义js -->
+    {% load staticfiles %}
     <script src='{% static "record/record.js" %}'></script>
+
 </body>
 </html>
