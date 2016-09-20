@@ -81,10 +81,24 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
+
+    #mysql database setting:
+    'default':{
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':'mysite_db',
+        'USER':'yetongxue',
+        'PASSWORD':'',
+        'HOST':'localhost',
+        'PORT':3306,
+        'OPTIONS':{
+
+        }
     }
+
 }
 
 
@@ -132,7 +146,7 @@ SERVER_PATH=[
     '/Users/yexianyong/Desktop/my_website/uploads'
 ]
 
-MEDIA_ROOT = SERVER_PATH[1]
+MEDIA_ROOT = SERVER_PATH[0]
 
 IMAGE_CACHE_ROOT='/Users/yetongxue/Desktop/my_website_uploads'
 
