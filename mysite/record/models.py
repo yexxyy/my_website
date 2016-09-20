@@ -75,3 +75,4 @@ class Record(models.Model):
             'date':self.date,
         }
         return this
+
