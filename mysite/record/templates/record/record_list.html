@@ -29,6 +29,7 @@
 
 
 
+
 </head>
 <body>
 
@@ -54,33 +55,29 @@
         <li><a href="#">摄影</a></li>
         <li><a href="#">游记</a></li>
         <li><a href="#">编程</a></li>
-        <li><a href="#" data-toggle="modal" data-target="#about">关于</a></li>
+        <li><a href="#">关于</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 
 
-
-
-
-
+<!-- 背景音乐 -->
+<div class="play_music">
+  <audio controls="controls" height="100" width="100" autoplay="true" loop="true">
+    <source src="{% static 'music/never_grow_old.mp3' %}" type="audio/mp3" />
+  </audio>
+</div>
 
 
 <div class="table_view">
 
-
 <!-- 视频cell -->
   <script type="text/template" id="video_template">
-
   <div class="tab-pane">
-
   <!-- 时间 -->
     <h1 class="publish_time"></h1>
-  
-
-    <div class="row">
-
+      <div class="row">
       <div class="col-md-5">
         <div class="icon_and_bg" > 
             <div style="position: absolute;top:30px;left:65px;">  
@@ -89,38 +86,31 @@
             <img src=""  class="banner"/><!--父视图 --> 
         </div> 
       </div>
-
       <div class="col-md-8">
         <p class="description"></p>
       </div>
-
     </div>
   </div>
-
-<!--分割线-->
-<hr class="divider">
-
+  <!--分割线-->
+  <hr class="divider">
   </script>
 
 
 
 <!-- 文章cell -->
   <script type="text/template" id="text_template">
-
     <div>
-
-<!-- 时间 -->
-    <h1 class="publish_time"></h1>
+      <!-- 时间 -->
+      <h1 class="publish_time"></h1>
       
-  <div class="text-content">
-      <h3 class="title"></h3>
-      <p class="description"></p>
-  </div>
-</div>
-<!--分割线-->
-<hr class="divider">
-
-  </script>
+      <div class="text-content">
+        <h3 class="title"></h3>
+        <p class="description"></p>
+      </div>
+    </div>
+  <!--分割线-->
+  <hr class="divider">
+</script>
 
 
 
@@ -129,29 +119,6 @@
 </div><!--table_view-->
 
 
-
-
-
-
-<!--关于弹出框-->
-<div class="modal fade" id="about">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">关于</h4>
-      </div>
-      <div class="modal-body">
-        <p>
-          梦思特科技（成都）有限公司于2014年6月注册成立，是由日本monstar-lab公司在中国的全资子公司，本公司主要致力于手机应用程序和互联网软件的研发，能为客户提供从Iphone软件，android软件到大型J2EE软件的整体解决方案。梦思特科技（成都）有限公司专注于新技术，新应用的发展，致力于成为国际领先的一站式移动应用解决方案提供商。
-        </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">了解</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
 
 
     <script src='{% static "record/jquery.min.js" %}'></script>

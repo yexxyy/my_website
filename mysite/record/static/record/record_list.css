@@ -2,12 +2,15 @@
 body{
 	padding-top: 100px;
 	background: #ffffff;
-	padding-right:20%;
+	padding-right:10%;
 	padding-left:10%;
 }
 
 
-
+.play_music{
+	float:right;
+	vertical-align: center;
+}
 
 
 .tab-pane{
