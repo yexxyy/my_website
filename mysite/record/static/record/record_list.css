@@ -1,4 +1,42 @@
 
 body{
-	background: #222
+	padding-top: 100px;
+	background: #ffffff;
+	padding-right:20%;
+	padding-left:20%;
 }
+
+
+
+
+
+.tab-pane{
+	background:#ffaadd;
+	
+}
+
+.row{
+	background:#0000ff;
+
+}
+
+.col-md-5{
+	background-color: #000;
+	width: 180px;
+	height:120px;
+	padding: 10px;
+}
+
+.col-md-5 img{
+	width: 100%;
+	height:100%;
+}
+.col-md-7{
+	background: #00ffdd;
+	text-align:left;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 20px;
+}
+
+

@@ -146,7 +146,7 @@ SERVER_PATH=[
     '/Users/yexianyong/Desktop/my_website/uploads'
 ]
 
-MEDIA_ROOT = SERVER_PATH[0]
+MEDIA_ROOT = SERVER_PATH[1]
 
 IMAGE_CACHE_ROOT='/Users/yetongxue/Desktop/my_website_uploads'
 
