@@ -11,7 +11,7 @@ $(document).ready(function(){
 
 function get_records_content(){
 	$.ajax({
-		url:host+'/records/',
+		url:host+'/record/',
 		type:'get',
 		success:function (content){
 			console.log(content.list)
@@ -47,7 +47,7 @@ function create_type_video_html(object){
 	$elem.find('.description').text(object.article_description)
     $elem.find('.banner').attr('src', cover_url)
     $elem.find('.video').text(object.video)
-
+    
 
 	$container.append($elem) //在容器结尾放入元素
 }

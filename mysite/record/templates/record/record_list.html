@@ -74,16 +74,26 @@
   <script type="text/template" id="video_template">
 
       
-  <div class="tab-pane" id="tab-firefox">
-    <div class="row feature">
+  <div class="tab-pane">
+    <div class="row">
 
       <div class="col-md-5">
-
         
-        <img  src="" class="banner">
+
+    
+
+        <div class="icon_and_bg" > 
+            <div style="position: absolute;top:30px;left:65px;">  
+              <img class="play_icon" src="{% static 'imgs/play_icon.png' %}"/><!--子视图  -->  
+            </div>  
+            <img src=""  class="banner"/><!--父视图 --> 
+        </div> 
+
+
+
       </div>
 
-      <div class="col-md-7">
+      <div class="col-md-8">
         <p class="description"></p>
       </div>
 

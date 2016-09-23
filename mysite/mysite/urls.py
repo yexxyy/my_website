@@ -24,5 +24,5 @@ urlpatterns = [
     url(r'^resources/(?P<file_path>.*)',views.get_pictures),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 
-    url(r'^records/',include('record.urls')),
+    url(r'^record/',include('record.urls')),
 ]
