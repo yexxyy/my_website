@@ -1,11 +1,13 @@
 
 host='http://localhost:8001'
 
+//全局变量,用于保存发布时间
+var temp_publish_date
 
     //文档就绪函数
 $(document).ready(function(){
 
-      get_records_content();
+      get_records_content()
 });
 
 
@@ -44,10 +46,12 @@ function create_type_video_html(object){
 
     var cover_url = host+object.banner;
 	var $elem = $($template.html())
+
+	$elem.find('.publish_time').text(object.publish_date)
 	$elem.find('.description').text(object.article_description)
     $elem.find('.banner').attr('src', cover_url)
     $elem.find('.video').text(object.video)
-    
+
 
 	$container.append($elem) //在容器结尾放入元素
 }
@@ -62,6 +66,9 @@ function create_type_travel_program_html(object){
 	var $template=$('script#text_template')
 
 	var $elem=$($template.html())
+
+	$elem.find('.publish_time').text(object.publish_date)
+	console.log('我是发布时间'+object.publish_date)
 	$elem.find('.title').text(object.title)
 	$elem.find('.description').text(object.article_description)
 

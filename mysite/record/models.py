@@ -72,7 +72,7 @@ class Record(models.Model):
             'article_description':self.article_description,
             'content':self.content,
             'video':self.video,
-            'date':self.date,
+            'publish_date':self.date,
         }
         return this
 
