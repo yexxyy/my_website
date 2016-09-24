@@ -1,6 +1,6 @@
 
 body{
-	padding-top: 100px;
+	padding-top: 70px;
 	background: #ffffff;
 	padding-right:10%;
 	padding-left:10%;
@@ -10,14 +10,18 @@ body{
 .play_music{
 	float:right;
 	vertical-align: center;
+
 }
 
 
 .tab-pane{
 	
-	
 }
 
+.row{
+	padding-top: 15px;
+	padding-left: 5%;
+}
 .col-md-5{
 	width: 180px;
 	height:120px;
@@ -49,10 +53,11 @@ body{
 }
 
 
-.text-content p{
-	padding-top: 10px;
-	padding-left: 10px;
+.text-content{
+	padding-top: 0px;
+	padding-left: 3%;
 	font-size: 18px;
 }
-
-
+.text-content p{
+	padding-left: 20px;
+}

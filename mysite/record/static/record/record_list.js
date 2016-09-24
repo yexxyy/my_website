@@ -84,6 +84,7 @@ function create_type_video_html(object){
 			}
 		}
 		temp_publish_date=object.publish_date
+		$elem.find('.devider').attr('width',0)
 	}
 
 	$elem.find('.description').text(object.article_description)
@@ -124,6 +125,8 @@ function create_type_travel_program_html(object){
 			}
 		}
 		temp_publish_date=object.publish_date
+		$elem.find('.devider').attr('width',0)
+		$elem.find('publish_time').attr('height',80)
 	}
 	
 	$elem.find('.title').text(object.title)
