@@ -143,12 +143,13 @@ STATIC_URL = '/static/'
 
 SERVER_PATH=[
     '/Users/yetongxue/Desktop/my_website/uploads',
-    '/Users/yexianyong/Desktop/my_website/uploads'
+    '/Users/yexianyong/Desktop/my_website/uploads',
+    '/root/server/uploads',
 ]
 
-MEDIA_ROOT = SERVER_PATH[0]
+MEDIA_ROOT = SERVER_PATH[2]
 
-IMAGE_CACHE_ROOT='/Users/yetongxue/Desktop/my_website_uploads'
+IMAGE_CACHE_ROOT='/root/server/uploads'
 
 MEDIA_URL = '/resources/'
 
