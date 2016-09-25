@@ -141,15 +141,21 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-SERVER_PATH=[
+UPLOADS_PATHS=[
     '/Users/yetongxue/Desktop/my_website/uploads',
     '/Users/yexianyong/Desktop/my_website/uploads',
     '/root/server/uploads',
 ]
 
-MEDIA_ROOT = SERVER_PATH[2]
+MEDIA_ROOT = UPLOADS_PATHS[0]
 
-IMAGE_CACHE_ROOT='/root/server/uploads'
+CACHE_ROOT_PATHS=[
+    '/Users/yetongxue/Desktop/my_website/uploads',
+    '/Users/yexianyong/Desktop/my_website/uploads',
+    '/root/server/uploads',
+]
+
+IMAGE_CACHE_ROOT=CACHE_ROOT_PATHS[0]
 
 MEDIA_URL = '/resources/'
 

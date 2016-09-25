@@ -7,7 +7,7 @@ body{
 }
 
 .row{
-	padding-top: 15px;
+	padding-top: 5px;
 	padding-left: 5%;
 }
 .col-md-5{
@@ -34,16 +34,16 @@ body{
 .col-md-8{
 	
 	padding-left: 25px;
-	padding-top: 10px;
+	padding-top: 0px;
 	padding-right: 0px;
-	font-size: 18px;
+	font-size: 16px;
 }
 
 .text-content{
 	padding-top: 0px;
 	padding-left: 3%;
-	font-size: 18px;
+	font-size: 16px;
 }
 .text-content p{
-	padding-left: 20px;
+	padding-left: 16px;
 }
