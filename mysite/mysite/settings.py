@@ -155,7 +155,7 @@ CACHE_ROOT_PATHS=[
     '/root/server/uploads',
 ]
 
-IMAGE_CACHE_ROOT=CACHE_ROOT_PATHS[0]
+IMAGE_CACHE_ROOT=CACHE_ROOT_PATHS[1]
 
 MEDIA_URL = '/resources/'
 
