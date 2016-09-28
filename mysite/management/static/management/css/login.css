@@ -1,14 +1,10 @@
 
 
 section.container {
-	padding-left: 300px;
+	float: right;
 	padding-top: 80px;
 }
 
 .form-button{
-	padding-left: 80px;
-	
-}
-.btn-default{
-	width: 100px;
+	padding-left: 100px;
 }

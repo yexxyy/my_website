@@ -28,14 +28,11 @@ def user_login(request):
         username=request.POST.get('username')
         password=request.POST.get('password')
         user=authenticate(username=username,password=password)
-
         if user is not None:
             #登录成功,向cookie中写入sessionid
             login(request,user)
             return redirect('/management')
-
-
         else:
             return redirect('/management/login')
-
         return HttpResponseNotFound("User does not exist")
+
