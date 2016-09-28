@@ -8,12 +8,16 @@ from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.http import JsonResponse, HttpResponseBadRequest, HttpResponseNotFound, HttpResponse, HttpResponseForbidden
 from django.views.decorators.http import require_GET, require_POST
+from django.shortcuts import render, redirect
+
 # Create your views here.
 
 
 @login_required(login_url='/management/login/')
 def index(request):
-    return HttpResponse('欢迎来到管理界面')
+
+
+    return render(request, 'management/manage_page.html')
 
 
 
@@ -23,12 +27,15 @@ def user_login(request):
     else:
         username=request.POST.get('username')
         password=request.POST.get('password')
-        print username
         user=authenticate(username=username,password=password)
 
         if user is not None:
-            return render(request,'management/manage_page.html')
+            #登录成功,向cookie中写入sessionid
+            login(request,user)
+            return redirect('/management')
+
+
         else:
-            return HttpResponseBadRequest('Login fail')
+            return redirect('/management/login')
 
         return HttpResponseNotFound("User does not exist")
