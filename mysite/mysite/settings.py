@@ -147,7 +147,7 @@ UPLOADS_PATHS=[
     '/root/server/uploads',
 ]
 
-MEDIA_ROOT = UPLOADS_PATHS[1]
+MEDIA_ROOT = UPLOADS_PATHS[0]
 
 CACHE_ROOT_PATHS=[
     '/Users/yetongxue/Desktop/my_website/uploads',
@@ -155,7 +155,7 @@ CACHE_ROOT_PATHS=[
     '/root/server/uploads',
 ]
 
-IMAGE_CACHE_ROOT=CACHE_ROOT_PATHS[1]
+IMAGE_CACHE_ROOT=CACHE_ROOT_PATHS[0]
 
 MEDIA_URL = '/resources/'
 
