@@ -4,11 +4,31 @@ host='http://localhost:8001'
 //全局变量,用于保存发布时间
 var temp_publish_date
 
+var today_str
+var yesterday_str
+
     //文档就绪函数
 $(document).ready(function(){
-
-      get_records_content()
+	get_current_time()
+  	get_records_content()
 });
+
+function get_current_time(){
+	today_str=get_someday_string(0)
+	yesterday_str=get_someday_string(-1)
+}
+
+function get_someday_string(count){
+	var some_day = new Date();
+	some_day.setDate(some_day.getDate()+count)
+
+	year=some_day.getFullYear()
+	month=some_day.getMonth()+1 //获取当前月份 要记得 +1 !
+	day=some_day.getDate()
+
+	temp_str=year+"-"+(month<10?"0"+month:month)+"-"+(day<10?"0"+day:day)
+	return temp_str
+}
 
 
 function get_records_content(){
@@ -47,12 +67,29 @@ function create_type_video_html(object){
     var cover_url = host+object.banner;
 	var $elem = $($template.html())
 
-	var temp_label=$elem.find('.publish_time')
-	if (temp_publish_date==object.publish_date) {
-		temp_label.addClass('height')
-	}
+	
+	if (temp_publish_date!=object.publish_date) {
+		//如果当前cell 的时间跟上一个cell的时间不相等,那么时间就显示,分割线不显示.否则相反
+		var devider=$elem.find('.devider')
+		devider.addClass('height',0)
 
-	$elem.find('.publish_time').text(object.publish_date)
+		var publish_time=$elem.find('.publish_time')
+		switch (object.publish_date) {
+			case today_str:{
+				publish_time.text('今天')
+				break;
+			}
+			case yesterday_str:{
+				publish_time.text('昨天')
+				break;
+			}
+			default:{
+				publish_time.text(object.publish_date)
+				break;
+			}
+		}
+		temp_publish_date=object.publish_date
+	}
 
 
 
@@ -73,7 +110,31 @@ function create_type_travel_program_html(object){
 
 	var $elem=$($template.html())
 
-	$elem.find('.publish_time').text(object.publish_date)
+	if (temp_publish_date!=object.publish_date) {
+		//如果当前cell 的时间跟上一个cell的时间不相等,那么时间就显示,分割线不显示.否则相反
+		var devider=$elem.find('.devider')
+		devider.addClass('height',0)
+
+		var publish_time=$elem.find('.publish_time')
+		switch (object.publish_date) {
+			case today_str:{
+				publish_time.text('今天')
+				break;
+			}
+			case yesterday_str:{
+				publish_time.text('昨天')
+				break;
+			}
+			default:{
+				publish_time.text(object.publish_date)
+				break;
+			}
+		}
+		temp_publish_date=object.publish_date
+	}
+
+
+
 	$elem.find('.title').text(object.title)
 	$elem.find('.description').text(object.article_description)
 
