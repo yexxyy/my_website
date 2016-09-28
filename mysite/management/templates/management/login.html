@@ -1,19 +1,57 @@
-
-
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
 
-    {% load staticfiles %}
-    <link rel="stylesheet" href="{% static 'management/css/login.css' %}">
 
+    <link rel="stylesheet" href="{% static 'management/css/login.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
     <title>登录</title>
 </head>
 <body>
 
 
+<div class="jumbotron">
+  <div class="container">
+  	<h1>Welcome to mysite!</h1>
+    <h2>Please sign in ...</h2>
+  </div>
+</div>
 
+<div class="from_hold_view">
+<section class="container">
+  <form id="login" class="login-con" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="user_name" class="user-name-label">
+        <span class="label-img"><img src="{% static 'management/imgs/user.png' %}"></span>
+        <span class="label-name">用户名</span>
+      </label>
+      <input type="text" id="user_name" class="user-input" name='username'>
+    </div>
+    <div class="form-group">
+      <label for="user_password" class="user-name-label">
+        <span class="label-img"><img src="{% static 'management/imgs/password.png' %}"></span>
+        <span class="label-name">密&nbsp&nbsp&nbsp码</span>
+      </label>
+      <input type="password" id="user_password" class="user-input" name='password'>
+    </div>
+
+
+    <div class="form-group border-none form-button">
+      <button type="submit" class="btn-default">登&nbsp&nbsp&nbsp录</button>
+    </div>
+
+  </form>
+</section>
+
+</div>
+
+
+
+<script type="text/javascript" src="{% static 'record/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 
 </body>
 </html>
