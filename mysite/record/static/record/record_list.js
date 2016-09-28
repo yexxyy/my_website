@@ -71,7 +71,7 @@ function create_type_video_html(object){
 	if (temp_publish_date!=object.publish_date) {
 		//如果当前cell 的时间跟上一个cell的时间不相等,那么时间就显示,分割线不显示.否则相反
 		var devider=$elem.find('.devider')
-		devider.addClass('height',0)
+		devider.style.visibility('hidden')
 
 		var publish_time=$elem.find('.publish_time')
 		switch (object.publish_date) {
@@ -113,7 +113,7 @@ function create_type_travel_program_html(object){
 	if (temp_publish_date!=object.publish_date) {
 		//如果当前cell 的时间跟上一个cell的时间不相等,那么时间就显示,分割线不显示.否则相反
 		var devider=$elem.find('.devider')
-		devider.addClass('height',0)
+		devider.style.visibility('hidden')
 
 		var publish_time=$elem.find('.publish_time')
 		switch (object.publish_date) {
