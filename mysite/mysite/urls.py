@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 
     url(r'^record/',include('record.urls')),
+    url(r'^management/',include('management.urls'))
 ]
