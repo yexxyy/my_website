@@ -49,7 +49,7 @@ function create_type_video_html(object){
 
 	var temp_label=$elem.find('.publish_time')
 	if (temp_publish_date==object.publish_date) {
-		temp_label.addClass('height',)
+		temp_label.addClass('height')
 	}
 
 	$elem.find('.publish_time').text(object.publish_date)
