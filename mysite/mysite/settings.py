@@ -92,7 +92,7 @@ DATABASES = {
         'NAME':'mysite_db',
         'USER':'yetongxue',
         'PASSWORD':'',
-        'HOST':'localhost',
+        'HOST':'',
         'PORT':3306,
         'OPTIONS':{
 
