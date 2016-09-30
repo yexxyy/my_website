@@ -1,5 +1,5 @@
 
-host='https://'+window.location.host
+host='http://'+window.location.host
 
 
 $(document).ready(function(){
@@ -12,13 +12,27 @@ $(document).ready(function(){
 function navbar_click(){
 
 	$("#demo-navbar .container  a").click(function(){
-		//模拟点击事件,让展开视图缩回
-		var expanded_change_btn=$("#bs-example-navbar-collapse-1")
-		expanded_change_btn.removeClass('in').attr({'aria-expanded':'false'})
+		//让展开视图缩回
+		var expanded_change=$("#bs-example-navbar-collapse-1")
+		expanded_change.removeClass('in').attr({'aria-expanded':'false'})
 
 		var type_str=$(this).attr("href").slice(1)
-		console.log(type_str)
 
+		temp_url=host+'/management'+'/record/'+type_str,
+
+		$.ajax({
+			url:temp_url,
+			type:'get',
+			success:function(content){
+				console.log(content)
+			},
+			error:function(error){
+				console.log(error)
+			}
+		})
+
+		console.log(host+'management'+'record')
+		
 	})
 
 

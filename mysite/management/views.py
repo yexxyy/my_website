@@ -1,16 +1,13 @@
 #coding=utf8
 
-from django.shortcuts import render
-from django.template import loader
-from django.views.decorators.http import require_GET, require_POST
+
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from django.http import JsonResponse, HttpResponseBadRequest, HttpResponseNotFound, HttpResponse, HttpResponseForbidden
-from django.views.decorators.http import require_GET, require_POST
 from django.shortcuts import render, redirect
+import types
+from .models import Record
 
-# Create your views here.
 
 
 @login_required(login_url='/management/login/')
@@ -41,5 +38,29 @@ def user_logout(request):
 
 
 
+@login_required(login_url='/management/login/')
+def get_records(request,type_or_id):
 
 
+    records=Record.objects.all().order_by('-date')
+    json_list=[]
+    if type_or_id=='': #请求所有列表
+        pass
+
+    if type(type_or_id)==types.UnicodeType: #请求指定类型列表
+        records.filter(Record.record_type==type_or_id)
+        print 'type_list'
+    if type(type_or_id) is types.IntType: #请求指定id 记录
+        records.filter(Record.id==type_or_id)
+        print 'id_'
+
+
+    for record in records:
+        record_detail = record.to_json()
+        json_list.append(record_detail)
+
+    return JsonResponse({
+        'status':200,
+        'message':'获取记录成功',
+        'list':json_list,
+    })
