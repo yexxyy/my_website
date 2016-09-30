@@ -15,10 +15,7 @@ from django.shortcuts import render, redirect
 
 @login_required(login_url='/management/login/')
 def index(request):
-
-
     return render(request, 'management/manage_page.html')
-
 
 
 def user_login(request):
@@ -35,4 +32,14 @@ def user_login(request):
         else:
             return redirect('/management/login')
         return HttpResponseNotFound("User does not exist")
+
+
+@login_required(login_url='/management/login/')
+def user_logout(request):
+    logout(request)
+    return redirect('/management/login')
+
+
+
+
 
