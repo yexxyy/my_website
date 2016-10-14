@@ -30,9 +30,41 @@ function get_list(type_str){
 			type:'get',
 			success:function(content){
 				console.log(content)
+				//移除之前内容
+				remove_tableview_content()
+				//添加内容
+				for (var i = 0; i < content.list.length; i++) {
+					create_list_view(content.list[i])
+				}
 			},
 			error:function(error){
 				console.log(error)
 		}
 	})
 }
+
+//创建cell
+function create_list_view(object){
+	var $container=$(".table_view") //获取容器
+	var $template=$("script#list_template") //cell模板
+
+	var $elem=$($template.html())
+	$elem.find(".title").text(object.title)
+
+	$container.append($elem)
+}
+
+//移除
+function remove_tableview_content(){
+	var $container=$(".table_view") //获取容器
+	
+
+}	
+
+
+
+
+
+
+
+
