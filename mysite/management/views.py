@@ -6,7 +6,9 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import JsonResponse, HttpResponseBadRequest, HttpResponseNotFound, HttpResponse, HttpResponseForbidden
 from django.shortcuts import render, redirect
 import types
-from .models import Record
+
+from django.db import models
+from record.models import Record
 
 
 
@@ -43,16 +45,21 @@ def get_records(request,type_or_id):
 
 
     records=Record.objects.all().order_by('-date')
+
+    print dir(Record)
+
     json_list=[]
     if type_or_id=='': #请求所有列表
+        print '所有列表'
         pass
 
-    if type(type_or_id)==types.UnicodeType: #请求指定类型列表
-        records.filter(Record.record_type==type_or_id)
-        print 'type_list'
-    if type(type_or_id) is types.IntType: #请求指定id 记录
-        records.filter(Record.id==type_or_id)
-        print 'id_'
+    if type_or_id!='' and type(type_or_id)==types.UnicodeType: #请求指定类型列表
+        records=records.filter(record_type=type_or_id)
+        print '类型列表'
+
+    if type_or_id!='' and type(type_or_id) is types.IntType: #请求指定id 记录
+        records = records.filter(pk=type_or_id)
+        print '获取指定id'
 
 
     for record in records:
