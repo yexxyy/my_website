@@ -57,8 +57,10 @@ function create_list_view(object){
 //移除
 function remove_tableview_content(){
 	var $container=$(".table_view") //获取容器
-	
+	var $template=$("script#list_template") //cell模板
 
+	$container.empty()
+	
 }	
 
 
