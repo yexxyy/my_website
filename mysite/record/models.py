@@ -63,6 +63,17 @@ class Record(models.Model):
     def get_banner_url(self):
         return self.banner.url if self.banner else ''
 
+    def get_record_imgs(self):
+        all_list =RecordImg.objects.all().order_by('-date')
+        json_list=[]
+
+
+
+
+
+
+        return ''
+
     def to_json(self):
         this={
             'id':self.pk,
@@ -73,6 +84,25 @@ class Record(models.Model):
             'content':self.content,
             'video':self.video,
             'publish_date':self.date,
+            'record_imgs':self.get_record_imgs(),
         }
         return this
 
+
+@python_2_unicode_compatible
+class RecordImg(models.Model):
+    record=models.ForeignKey(Record,on_delete=models.CASCADE)
+    temp_img=models.ImageField(
+        upload_to=pic_upload_path,
+        verbose_name='摄影图片',
+        null=True,
+        blank=True,
+    )
+    remarks=models.CharField(
+        max_length=20,
+        null = True,
+        blank = True,
+    )
+
+    def __str__(self):
+        return self.temp_img.url if self.temp_img else ''
