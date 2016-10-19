@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import JsonResponse, HttpResponseBadRequest, HttpResponseNotFound, HttpResponse, HttpResponseForbidden
 from django.shortcuts import render, redirect
 import types
-
+from django.views.decorators.csrf import csrf_exempt
 from django.db import models
 from record.models import Record
 
@@ -39,10 +39,10 @@ def user_logout(request):
     return redirect('/management/login')
 
 
-
+@csrf_exempt
 @login_required(login_url='/management/login/')
 def get_records(request,type_or_id):
-
+    print request.method
     #如果是get 那么是获取记录;如果是post 则是删除记录
     if request.method=='GET':
         records = Record.objects.all().order_by('-date')
