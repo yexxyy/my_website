@@ -60,12 +60,24 @@ function remove_tableview_content(){
 	var $template=$("script#list_template") //cell模板
 
 	$container.empty()
-	
+
 }	
 
 
+//删除记录
+function delete_records(){
+	
+	var $form =$("#record_list_form")
+	$form.submit()
+}
+
+//添加
+function add_record(){
+	
 
 
+
+}
 
 
 

@@ -10,15 +10,20 @@
 <body>
 
 <div>
+
 	<!-- 导航栏 -->
 	{% include "management/manage_topbar.html" %}	
 
+	<div id="main_content">
+		<!-- 列表内容 -->
+		{% include "management/manage_content.html" %}	
 
-	<!-- 列表内容 -->
-	{% include "management/manage_content.html" %}
+	</div>
+	
 
 	<!-- 尾视图 -->
 	{% include "management/manage_footer.html" %}
+
 </div>
 
 
