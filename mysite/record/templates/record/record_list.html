@@ -33,6 +33,8 @@
 </head>
 <body>
 
+<div id="body_content">
+
     <!--导航栏-->
  <nav class="navbar navbar-fixed-top navbar-inverse" id="demo-navbar">
   <div class="container">
@@ -44,18 +46,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#type_all">我的流水账</a>
+      <a class="navbar-brand" href="#home">业力实验室</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
       <ul class="nav navbar-nav">
+        <li><a href="#type_all">所有记录</a></li>
         <li><a href="#type_video">视频</a></li>
         <li><a href="#type_phtoto">摄影</a></li>
         <li><a href="#type_travel">游记</a></li>
         <li><a href="#type_program">编程</a></li>
-        <li><a href="#about">关于</a></li>
+        <li><a href="#context">联系我</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -124,11 +127,19 @@
 </script><!-- 摄影图片 -->
 
 
+</div> <!-- body_content -->
+
+    <!-- 尾视图 -->
+    {% include "record/record_footer.html" %}
 
     <script src='{% static "record/jquery.min.js" %}'></script>
  	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <!--自定义js -->
     <script src='{% static "record/record_list.js" %}'></script>
 
+
+
 </body>
+
+
 </html>
