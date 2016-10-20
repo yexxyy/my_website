@@ -97,9 +97,50 @@ function create_type_video_html(object){
 	$container.append($elem) //在容器结尾放入元素
 }
 
+
 function create_type_phtoto_html(object){
-	console.log(object)
+	var $container=$('.table_view')
+	var $template_container=$('script#phote_template')
+	var $elem=$($template_container.html())
+	$elem.find('.text-content').text(object.article_description)
+
+	if (temp_publish_date!=object.publish_date) {
+		//如果当前cell 的时间跟上一个cell的时间不相等,那么时间就显示,分割线不显示.否则相反
+		$elem.find('.devider').attr('width',0)
+		var publish_time=$elem.find('.publish_time')
+		switch (object.publish_date) {
+			case today_str:{
+				publish_time.text('今天')
+				break;
+			}
+			case yesterday_str:{
+				publish_time.text('昨天')
+				break;
+			}
+			default:{
+				publish_time.text(object.publish_date)
+				break;
+			}
+		}
+		temp_publish_date=object.publish_date
+	}
+
+
+	imgs=object.record_imgs
+	for (var i = 0; i <imgs.length; i++) {
+		
+		img=imgs[i]
+		var $template_img=$('script#img_template')
+		$elem_img=$($template_img.html())
+		$elem_img.find('#photo_img').attr('src',img.imgurl)
+
+		//img模板添加到cell
+		$elem.find('.row').append($elem_img)
+	}
+
 	
+	//将cell添加到tableView
+	$container.append($elem)
 }
 
 function create_type_travel_program_html(object){

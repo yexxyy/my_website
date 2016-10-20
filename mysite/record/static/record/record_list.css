@@ -47,3 +47,15 @@ body{
 .text-content p{
 	padding-left: 16px;
 }
+.col-md-1{
+	width: auto;
+	height: 120px;
+
+}
+img#photo_img{
+	height: 120px;
+	width: auto;
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-bottom: 15px;
+}

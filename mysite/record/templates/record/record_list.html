@@ -62,7 +62,11 @@
 </nav>
 
 
+
+
 <div class="table_view">
+
+</div><!--table_view-->
 
 <!-- 视频cell -->
   <script type="text/template" id="video_template">
@@ -84,13 +88,11 @@
       </div>
     </div>
   </div>
-  </script>
-
-
+  </script><!-- 视频cell -->
 
 <!-- 文章cell -->
   <script type="text/template" id="text_template">
-    <div id="cell_content">
+    <div class="cell_content">
     <hr class="devider"/>
       <!-- 时间 -->
       <h2 class="publish_time"></h2>
@@ -100,14 +102,29 @@
         <p class="description"></p>
       </div>
     </div>
-</script>
+</script><!-- 文章cell -->
 
 
+<!-- 摄影图片展示cell -->
+  <script type="text/template" id="phote_template">
+    <div class="cell_content">
+      <hr class="devider"/>
+      <!-- 时间 -->
+      <h2 class="publish_time"></h2>
 
+      <p class="text-content"></p>
+      <div class="row">
+        
+      </div>
+    </div>
+  </script><!-- 摄影图片展示cell -->
 
-
-</div><!--table_view-->
-
+<!-- 摄影图片 -->
+<script type="text/template" id="img_template">
+  <div class="col-md-1">
+    <img src="" id="photo_img">
+  </div>
+</script><!-- 摄影图片 -->
 
 
 
