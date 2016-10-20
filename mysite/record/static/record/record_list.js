@@ -25,10 +25,20 @@ function navbar_click(){
 
 		//获取对应列表数据
 		var type_str=$(this).attr("href").slice(1)
-		get_records_content(type_str)
+		if (type_str=='about') {
+			get_about_page()
+		}else{
+			get_records_content(type_str)
+		}
 	})
 }
 
+//创建关于界面
+function get_about_page(){
+	remove_tableview_content()
+
+	
+}
 
 function get_current_time(){
 	today_str=get_someday_string(0)
