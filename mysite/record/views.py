@@ -10,8 +10,14 @@ from django.template import loader
 from django.views.decorators.http import require_GET
 
 @require_GET
-def get_record_list(request):
+def get_record_list(request,record_type):
     records=Record.objects.all().order_by('-date')
+    json_list = []
+    if record_type == 'type_all':  # 请求所有列表
+        pass
+    else:
+        records = records.filter(record_type=record_type)
+
     json_list=[]
     for record in records:
         record_detail=record.to_json()
@@ -22,6 +28,9 @@ def get_record_list(request):
         'message':'获取记录列表成功',
         'list':json_list,
     })
+
+
+
 
 @require_GET
 def get_record_detail(request,id):

@@ -10,8 +10,25 @@ var yesterday_str
     //文档就绪函数
 $(document).ready(function(){
 	get_current_time()
-  	get_records_content()
+
+  	get_records_content("type_all")
+	navbar_click()
 });
+
+//导航栏点击事件
+function navbar_click(){
+
+	$("#demo-navbar .container  a").click(function(){
+		//让展开视图缩回
+		var expanded_change=$("#bs-example-navbar-collapse-1")
+		expanded_change.removeClass('in').attr({'aria-expanded':'false'})
+
+		//获取对应列表数据
+		var type_str=$(this).attr("href").slice(1)
+		get_records_content(type_str)
+	})
+}
+
 
 function get_current_time(){
 	today_str=get_someday_string(0)
@@ -31,12 +48,15 @@ function get_someday_string(count){
 }
 
 
-function get_records_content(){
+function get_records_content(type_str){
 	$.ajax({
-		url:host+'/record/',
+		url:host+'/record/'+type_str,
 		type:'get',
 		success:function (content){
-			console.log(content.list)
+			
+			//移除之前内容
+			remove_tableview_content()
+
 			list=content.list
 			for (var i = 0; i < list.length; i++) {
 				object=list[i]
@@ -58,7 +78,10 @@ function get_records_content(){
 
 }
 
-
+function remove_tableview_content(){
+	$table_view=$('.table_view')
+	$table_view.empty()
+}
 
 function create_type_video_html(object){
 	var $container = $('.table_view')//容器
