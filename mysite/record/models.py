@@ -64,15 +64,15 @@ class Record(models.Model):
         return self.banner.url if self.banner else ''
 
     def get_record_imgs(self):
-        all_list =RecordImg.objects.all().order_by('-date')
+        #all_list =RecordImg.objects.all().order_by('-date')
+        imgs=self.imgs_set.all()
         json_list=[]
+        for img in imgs:
+            img_json=img.to_json()
+            json_list.append(img_json)
+        return json_list
 
 
-
-
-
-
-        return ''
 
     def to_json(self):
         this={
@@ -91,7 +91,11 @@ class Record(models.Model):
 
 @python_2_unicode_compatible
 class RecordImg(models.Model):
-    record=models.ForeignKey(Record,on_delete=models.CASCADE)
+    record=models.ForeignKey(
+        Record,
+        on_delete=models.CASCADE,
+        related_name='imgs_set',
+    )
     temp_img=models.ImageField(
         upload_to=pic_upload_path,
         verbose_name='摄影图片',
@@ -106,3 +110,14 @@ class RecordImg(models.Model):
 
     def __str__(self):
         return self.temp_img.url if self.temp_img else ''
+
+    def get_img_url(self):
+        return self.temp_img.url if self.temp_img else ''
+
+    def to_json(self):
+        this={
+            'id':self.pk,
+            'imgurl':self.get_img_url(),
+            'remarks':self.remarks,
+        }
+        return this
