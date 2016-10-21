@@ -11,7 +11,7 @@ var yesterday_str
 $(document).ready(function(){
 	get_current_time()
 
-  	get_records_content("type_all")
+  	get_home_page()
 	navbar_click()
 });
 
@@ -37,14 +37,45 @@ function navbar_click(){
 
 //创建关于界面
 function get_about_page(){
-	remove_tableview_content()
-	var $container = $('.table_view')//容器
+
+	$.ajax({
+		url:host+'/record/about',
+		type:'get',
+		success:function(content){
+			remove_tableview_content()
+			var $container = $('.table_view')//容器
+			$container.append(content)
+			console.log(content)
+
+
+		},
+		error:function(error){
+			console.log(error)
+		}
+	})
 
 }
 //创建首页
 function get_home_page(){
-	remove_tableview_content()
-	var $container = $('.table_view')//容器
+
+	$.ajax({
+		url:host+'/record/home',
+		type:'get',
+		success:function(content){
+			remove_tableview_content()
+			var $container = $('.table_view')//容器
+			$container.append(content)
+			console.log(content)
+
+
+		},
+		error:function(error){
+			console.log(error)
+		}
+	})
+
+
+
 }
 
 function get_current_time(){
@@ -67,7 +98,7 @@ function get_someday_string(count){
 
 function get_records_content(type_str){
 	$.ajax({
-		url:host+'/record/'+type_str,
+		url:host+'/record/list/'+type_str,
 		type:'get',
 		success:function (content){
 			
