@@ -5,7 +5,7 @@
     
 .main-footer{
     background: #333;
-    text-align: center;
+    
 
 }
 .copyright{
@@ -13,8 +13,12 @@
     text-align: center;
 }
 
-.main-footer h4.title{
+.main-footer h5{
     color: #eee;
+}
+
+.footer-unit li a {
+    color: #ddaa00;
 }
 
 .copyright{
@@ -30,46 +34,60 @@
 
 
 <footer class="main-footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="widget">
-                    <h4 class="title">友情链接</h4>
-                    <div class="content friend-links">
-                        <a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" title="Bootstrap中文网" onclick="_hmt.push(['_trackEvent', 'link', 'click', 'Bootstrap中文网'])" target="_blank">优酷主页</a>
-                        <a href="http://www.mafengwo.cn/u/91530380.html" title="Laravel中文网" onclick="_hmt.push(['_trackEvent', 'link', 'click', 'Laravel中文网'])" target="_blank">马蜂窝主页</a>
-                        <a href="http://weibo.com/u/3431043174?refer_flag=1001030201_&is_hot=1" title="Laravel中文网" onclick="_hmt.push(['_trackEvent', 'link', 'click', 'Laravel中文网'])" target="_blank">新浪微博主页</a>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row">
 
-            <div class="col-sm-4">
-                <div class="widget">
-                    <h4 class="title">我们用到的技术</h4>
-                    <div class="content tag-cloud">
-                        <a href="http://www.bootcss.com/" title="Bootstrap中文网" onclick="_hmt.push(['_trackEvent', 'link', 'click', 'Bootstrap中文网'])" target="_blank">Bootstrap</a>
-                        <a href="http://www.ghostchina.com/" title="Ghost中国" onclick="_hmt.push(['_trackEvent', 'link', 'click', 'Ghost中国'])" target="_blank">Ghost</a>
-                        <a href="http://www.bootcdn.cn/" title="BootCDN" onclick="_hmt.push(['_trackEvent', 'link', 'click', 'BootCDN'])" target="_blank">BootCDN</a>
-                        <a href="http://www.gruntjs.net/" title="Grunt中文网" onclick="_hmt.push(['_trackEvent', 'link', 'click', 'Grunt中文网'])" target="_blank">Grunt</a>
-                        <a href="http://www.jquery123.com/" title="jQuery中文文档" onclick="_hmt.push(['_trackEvent', 'link', 'click', 'jQuery中文文档'])" target="_blank">jQuery</a>
-                        <a href="http://babeljs.cn/" title="Babeljs中文网" onclick="_hmt.push(['_trackEvent', 'link', 'click', 'Babeljs中文网'])" target="_blank">Babeljs</a>
-                        <a href="http://lodashjs.com/" title="lodash中文网" onclick="_hmt.push(['_trackEvent', 'link', 'click', 'Lodash中文网'])" target="_blank">Lodash</a>
-                        <a href="http://www.gulpjs.com.cn/" title="Gulp中文网" onclick="_hmt.push(['_trackEvent', 'link', 'click', 'Gulp中文网'])" target="_blank">Gulp</a>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-sm-4">
-                <div class="widget">
-                    <h4 class="title">赞助商</h4>
-                    <div class="content friend-links">
-                        <a href="https://www.upyun.com/" title="又拍云" onclick="_hmt.push(['_trackEvent', 'link', 'click', '又拍云'])" target="_blank">又拍云</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+      <div class="col-md-2 col-sm-6 col-xs-6 footer-unit">
+        <ul class="footer-content">
+          <li>
+            <h5>提供的服务</h5></li>
+          <li><a href="/common/about-us" target="_blank">关于我们</a></li>
+          <li><a href="/common/report" target="_blank">媒体</a></li>
+          <li><a href="/common/logo" target="_blank">标志</a></li>
+          <li><a href="/common/transparency" target="_blank">资产透明</a></li>
+          <li><a href="/common/jobs" target="_blank">加入我们</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2 col-sm-6 col-xs-6 footer-unit">
+        <ul class="footer-content">
+          <li>
+            <h5>友情链接</h5></li>
+          <li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank">优酷主页</a></li>
+          <li><a href="http://www.mafengwo.cn/u/91530380.html" target="_blank">马蜂窝主页</a></li>
+          <li><a href="http://weibo.com/u/3431043174?refer_flag=1001030201_&is_hot=1" target="_blank">新浪微博</a></li>
+        </ul>
+      </div>
+
+      
+
+      <div class="col-md-2 col-sm-6 col-xs-6 footer-unit">
+        <ul class="footer-content">
+          <li>
+            <h5>帮助</h5></li>
+          <li><a href="/helpdesk/open" target="_blank">在线客服（推荐）</a></li>
+          <li><a href="/post/" target="_blank">最新公告</a></li>
+          <li><a href="/common/faq" target="_blank">常见问题</a></li>
+          <li><a href="/common/contact" target="_blank">联系我们</a></li>
+        </ul>
+      </div>
+
+
+      <div class="col-md-2 col-sm-6 col-xs-6 footer-unit">
+        <ul class="footer-content">
+          <li><h5>微信公众号</h5></li>
+          <li><img src="{% static 'imgs/two_code.jpg' %}" alt="官方微信" width="90"></li>
+        </ul>
+      </div>
+
+
     </div>
+  </div>
 </footer>
+
+
+
 
 <div class="copyright">
     <div class="container">
