@@ -43,9 +43,10 @@ function get_about_page(){
 		type:'get',
 		success:function(content){
 			remove_tableview_content()
-			var $container = $('.table_view')//容器
+			remove_home_about_content()
+			var $container = $('#home_about_hold')//容器
 			$container.append(content)
-			console.log(content)
+			
 
 
 		},
@@ -63,9 +64,10 @@ function get_home_page(){
 		type:'get',
 		success:function(content){
 			remove_tableview_content()
-			var $container = $('.table_view')//容器
+			remove_home_about_content()
+			var $container = $('#home_about_hold')//容器
 			$container.append(content)
-			console.log(content)
+			
 
 
 		},
@@ -104,6 +106,7 @@ function get_records_content(type_str){
 			
 			//移除之前内容
 			remove_tableview_content()
+			remove_home_about_content()
 
 			list=content.list
 			for (var i = 0; i < list.length; i++) {
@@ -129,6 +132,11 @@ function get_records_content(type_str){
 function remove_tableview_content(){
 	$table_view=$('.table_view')
 	$table_view.empty()
+}
+
+function remove_home_about_content(){
+	var $container = $('#home_about_hold')//容器
+	$container.empty()
 }
 
 function create_type_video_html(object){
