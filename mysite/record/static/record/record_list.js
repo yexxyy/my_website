@@ -25,8 +25,10 @@ function navbar_click(){
 
 		//获取对应列表数据
 		var type_str=$(this).attr("href").slice(1)
-		if (type_str=='about') {
+		if (type_str=='context'){
 			get_about_page()
+		}else if(type_str=='home'){
+			get_home_page()
 		}else{
 			get_records_content(type_str)
 		}
@@ -36,8 +38,13 @@ function navbar_click(){
 //创建关于界面
 function get_about_page(){
 	remove_tableview_content()
+	var $container = $('.table_view')//容器
 
-	
+}
+//创建首页
+function get_home_page(){
+	remove_tableview_content()
+	var $container = $('.table_view')//容器
 }
 
 function get_current_time(){
