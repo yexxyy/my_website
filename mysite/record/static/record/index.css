@@ -2,13 +2,6 @@ body{
 	padding-top: 50px;
 }
 
-#body_content{
-	padding-top: 70px;
-	background: #fff;
-	padding-right:25%;
-	padding-left:20%;
-	padding-bottom: 50px;
-}
 
 .row{
 	padding-top: 5px;
@@ -30,13 +23,13 @@ body{
 .play_icon{
 	width: 50px;
 	height: 50px;
-	
+
 	align-content: center;
-	
+
 }
 
 .col-md-8{
-	
+
 	padding-left: 25px;
 	padding-top: 5px;
 	padding-right: 0px;
@@ -59,4 +52,13 @@ img#photo_img{
 	height: 120px;
 	width: auto;
 	padding-bottom: 20px;
+}
+
+.copyright{
+    background: #222;
+    text-align: center;
+    color: #888;
+}
+.col-sm-12{
+    color: #888;
 }

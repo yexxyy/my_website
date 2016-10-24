@@ -48,11 +48,11 @@ def get_record_list_view(request):
     # return HttpResponse(template.render(request))
 
     #或者:
-    return render(request,'record/record_list.html')
+    return render(request,'record/index.html')
 
 
 def get_home_html(request):
     return render(request, 'record/record_home.html')
 
 def get_about_html(request):
-    return render(request,'record/about.html')
+    return render(request,'record/record_about.html')

@@ -27,30 +27,28 @@ function navbar_click(){
 		var type_str=$(this).attr("href").slice(1)
 		if (type_str=='context'){
 			get_about_page()
+			
 		}else if(type_str=='home'){
 			get_home_page()
-			$('.main-footer').css("display",'none')
+			
 		}else{
 			get_records_content(type_str)
-			$('.main-footer').css("display",'none')
+			
 		}
 	})
 }
 
-//创建关于界面
+//联系我们
 function get_about_page(){
 
 	$.ajax({
 		url:host+'/record/about',
 		type:'get',
 		success:function(content){
-			remove_tableview_content()
-			remove_home_about_content()
-			var $container = $('#home_about_hold')//容器
+			remove_page_content()
+			var $container = $('#page_content')//容器
+			$container.css("padding",0)
 			$container.append(content)
-			$('.main-footer').css("display",'block')
-
-
 		},
 		error:function(error){
 			console.log(error)
@@ -65,11 +63,11 @@ function get_home_page(){
 		url:host+'/record/home',
 		type:'get',
 		success:function(content){
-			remove_tableview_content()
-			remove_home_about_content()
-			var $container = $('#home_about_hold')//容器
+			remove_page_content()
+			var $container = $('#page_content')//容器
+			$container.css("padding",0)
 			$container.append(content)
-			
+
 
 
 		},
@@ -105,11 +103,13 @@ function get_records_content(type_str){
 		url:host+'/record/list/'+type_str,
 		type:'get',
 		success:function (content){
-			
-			//移除之前内容
-			remove_tableview_content()
-			remove_home_about_content()
 
+			//移除之前内容
+			remove_page_content()
+			$('#page_content').css({
+				"padding-right":"20%",
+				"padding-left":"20%",
+			})
 			list=content.list
 			for (var i = 0; i < list.length; i++) {
 				object=list[i]
@@ -131,24 +131,19 @@ function get_records_content(type_str){
 
 }
 
-function remove_tableview_content(){
-	$table_view=$('.table_view')
-	$table_view.empty()
-}
-
-function remove_home_about_content(){
-	var $container = $('#home_about_hold')//容器
+function remove_page_content(){
+	var $container = $('#page_content')//容器
 	$container.empty()
 }
 
 function create_type_video_html(object){
-	var $container = $('.table_view')//容器
+	var $container = $('#page_content')//容器
 	var $template = $('script#video_template')//模版
 
     var cover_url = host+object.banner;
 	var $elem = $($template.html())
 
-	
+
 	if (temp_publish_date!=object.publish_date) {
 		//如果当前cell 的时间跟上一个cell的时间不相等,那么时间就显示,分割线不显示.否则相反
 		$elem.find('.devider').attr('width',0)
@@ -180,7 +175,7 @@ function create_type_video_html(object){
 
 
 function create_type_phtoto_html(object){
-	var $container=$('.table_view')
+	var $container=$('#page_content')
 	var $template_container=$('script#phote_template')
 	var $elem=$($template_container.html())
 	$elem.find('.text-content').text(object.article_description)
@@ -209,7 +204,7 @@ function create_type_phtoto_html(object){
 
 	imgs=object.record_imgs
 	for (var i = 0; i <imgs.length; i++) {
-		
+
 		img=imgs[i]
 		var $template_img=$('script#img_template')
 		$elem_img=$($template_img.html())
@@ -219,13 +214,13 @@ function create_type_phtoto_html(object){
 		$elem.find('.row').append($elem_img)
 	}
 
-	
+
 	//将cell添加到tableView
 	$container.append($elem)
 }
 
 function create_type_travel_program_html(object){
-	var $container=$('.table_view')
+	var $container=$('#page_content')
 	var $template=$('script#text_template')
 
 	var $elem=$($template.html())
