@@ -146,9 +146,9 @@ STATIC_URL = '/static/'
 
 
 UPLOADS_PATHS=[
-    '/Users/yetongxue/Desktop/my_website/uploads',
-    '/Users/yexianyong/Desktop/my_website/uploads',
-    '/root/server/uploads',
+    '/Users/yetongxue/Desktop/assets_upload',
+    '/Users/yexianyong/Desktop/assets_upload',
+    '/root/server/assets_upload',
 ]
 MEDIA_ROOT = UPLOADS_PATHS[1]
 
@@ -157,9 +157,9 @@ MEDIA_ROOT = UPLOADS_PATHS[1]
 
 
 CACHE_ROOT_PATHS=[
-    '/Users/yetongxue/Desktop/my_website/uploads',
-    '/Users/yexianyong/Desktop/my_website/uploads',
-    '/root/server/uploads',
+    '/Users/yetongxue/Desktop/assets_upload',
+    '/Users/yexianyong/Desktop/assets_upload',
+    '/root/server/assets_upload',
 ]
 IMAGE_CACHE_ROOT=CACHE_ROOT_PATHS[1]
 
