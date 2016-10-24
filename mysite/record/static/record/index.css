@@ -3,56 +3,7 @@ body{
 }
 
 
-.row{
-	padding-top: 5px;
-	padding-left: 5%;
-}
-.col-md-5{
-	width: 180px;
-	height:120px;
-	border:1px solid #222;
-	padding: 10px;
-}
 
-.col-md-5 .banner{
-	width: 100%;
-	height:100%;
-	border:1px solid #aaaaaa;
-}
-
-.play_icon{
-	width: 50px;
-	height: 50px;
-
-	align-content: center;
-
-}
-
-.col-md-8{
-
-	padding-left: 25px;
-	padding-top: 5px;
-	padding-right: 0px;
-	font-size: 16px;
-}
-
-.text-content{
-	padding-top: 0px;
-	padding-left: 3%;
-	font-size: 16px;
-}
-.text-content p{
-	padding-left: 16px;
-}
-.col-md-1{
-	height: 120px;
-	width: auto;
-}
-img#photo_img{
-	height: 120px;
-	width: auto;
-	padding-bottom: 20px;
-}
 
 .copyright{
     background: #222;
