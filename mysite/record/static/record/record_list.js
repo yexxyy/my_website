@@ -29,8 +29,10 @@ function navbar_click(){
 			get_about_page()
 		}else if(type_str=='home'){
 			get_home_page()
+			$('.main-footer').css("display",'none')
 		}else{
 			get_records_content(type_str)
+			$('.main-footer').css("display",'none')
 		}
 	})
 }
@@ -46,7 +48,7 @@ function get_about_page(){
 			remove_home_about_content()
 			var $container = $('#home_about_hold')//容器
 			$container.append(content)
-			
+			$('.main-footer').css("display",'block')
 
 
 		},
