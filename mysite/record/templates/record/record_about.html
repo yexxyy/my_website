@@ -17,61 +17,85 @@
     color: #ddaa00;
 }
 
+.about_icon_size{
+	width: 55px;
+	height: 55px;
+}
 
+.container_hold{
+	background: url({% static 'imgs/tenwan2.png' %});
+	padding:100px 0;
+    background-repeat:no-repeat;
+    background-position:left;
+  
+    background-size:auto 100%;
+    -webkit-background-size:auto 100%;
+    -moz-background-size:auto 100%;
+    -o-background-size:auto 100%;
+    -ms-background-size:auto 100%;
+}
 
 
 </style>
 
 
+<section class="contact" id="contact">
+<div class="container" >
+	<div class="col-lg-6 col-md-6 contact-wthree2">
+		<h3 class="head1">最新公告:</h3>
+		<p>暂无公告...</p>
+	</div>
+</div>
+</section>
 
 
 <!-- contact section -->
-<section class="contact" id="contact">
-	<div class="container">
+<section class="contact container_hold" id="contact">
+	<div class="container" >
 		<div class="col-lg-6 col-md-6 contact-wthree1">
 			<h3 class="head1">联系信息:</h3>
 			<div class="contact-w3ls">
 				<div class="row">
 					<div class="col-xs-4 contact-agile1">
-						<i class="fa fa-map-marker" aria-hidden="true"></i>
+						<i class="fa"><img class="about_icon_size" src="{% static 'imgs/location_icon.png' %}"></i>
 					</div>
 					<div class="col-xs-8 contact-agile2">
 						<div class="address">
 							<h4>地 址</h4>
-							<p>Jack street,Chicago,USA.</p>
+							<p>成都市一环路燃灯市东街</p>
 						</div>	
 					</div>	
 				</div>
 				<div class="row">
 					<div class="col-xs-4 contact-agile1">
-						<i class="fa fa-envelope-o" aria-hidden="true"></i>
+						<i class="fa"><img class="about_icon_size" src="{% static 'imgs/mail_icon.png' %}"></i>
 					</div>
 					<div class="col-xs-8 contact-agile2">
 						<div class="address">
 							<h4>邮 箱</h4>
-							<p><a href="mailto:email@example.com">email@example.com</a></p>
+							<p><a href="mailto:email@example.com">570321129@qq.com</a></p>
 						</div>	
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-xs-4 contact-agile1">
-						<i class="fa fa-mobile" aria-hidden="true"></i>
+						<i class="fa"><img class="about_icon_size" src="{% static 'imgs/phone_icon.png'' %}"></i>
 					</div>
 					<div class="col-xs-8 contact-agile2">
 						<div class="address">
 							<h4>电 话</h4>
-							<p>+01 0101 01010101</p>
+							<p>182****2093</p>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-xs-4 contact-agile1">
-						<i class="fa fa-clock-o" aria-hidden="true"></i>
+						<i class="fa"><img class="about_icon_size" src="{% static 'imgs/time_icon.png'' %}"></i>
 					</div>
 					<div class="col-xs-8 contact-agile2">
 						<div class="address">
 							<h4>工作时间</h4>
-							<p>Monday - Friday : 08 Am - 07 Pm</p>
+							<p>星期六 - 星期日 : 10:00 - 18:00</p>
 						</div>
 					</div>
 				</div>
