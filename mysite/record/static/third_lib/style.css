@@ -931,17 +931,19 @@ section.test .carousel-indicators {
 }
 /*-- /testimonial section --*/
 /*-- statistics section --*/
+
+
+
 section.stats {
 	padding:100px 0;
-	background:url(http://img02.tooopen.com/images/20160408/tooopen_sy_158723161481.jpg);
-	background-repeat:no-repeat;
-	background-position:center;
-	background-attachment:fixed;
-	background-size:100% 100%;
-	-webkit-background-size:100% 100%;
-	-moz-background-size:100% 100%;
-	-o-background-size:100% 100%;
-	-ms-background-size:100% 100%;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-attachment:fixed;
+    background-size:100% 100%;
+    -webkit-background-size:100% 100%;
+    -moz-background-size:100% 100%;
+    -o-background-size:100% 100%;
+    -ms-background-size:100% 100%;
 }
 section.stats p.text-center {
 	font-size: 16px;

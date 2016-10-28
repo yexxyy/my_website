@@ -23,25 +23,28 @@
 		color: #ffffff;
 	}
 
+	.stats_backgrand_img{
+		background: url({% static 'imgs/black_bg.jpg' %});
+	}
+	
 
 </style>
 <!--http://img02.tooopen.com/images/20160408/tooopen_sy_158723161481.jpg-->
 
 <!-- 广告 -->
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel"  data-interval="3000">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
     <li data-target="#carousel-example-generic" data-slide-to="2"></li>
     <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="{% static 'imgs/advertisement_pic.jpg' %}" alt="...">
+      <img src="{% static 'imgs/advertizement_pic4.jpg' %}" alt="...">
       <div class="carousel-caption">
         
       </div>
@@ -68,15 +71,6 @@
       </div>
     </div>
 
-
-    <div class="item">
-      <img src="{% static 'imgs/advertizement_pic4.jpg' %}" alt="...">
-      <div class="carousel-caption">
-        
-      </div>
-    </div>
-
-    
   </div>
 
   <!-- Controls -->
@@ -176,11 +170,10 @@
                     <div class="mask">
                         <h4>叶显勇</h4>
                         <ul class="social-icons2">
-							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
-							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa fa-youtube"></i></a></li>
-							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/sina.jpg' %}"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/youku.jpg' %}"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/mafengwo.jpg' %}"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/qzone.jpg' %}"></i></a></li>
 						</ul>	
                         <p class="home_team_info">2013年毕业,摄影/摄像/剪辑师.同时也是iOS/python/Django/Web开发者</p>
                     </div>
@@ -192,11 +185,10 @@
                     <div class="mask">
                         <h4>Diana</h4>
                         <ul class="social-icons2">
-							<li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fa fa-youtube"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/sina.jpg' %}"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/youku.jpg' %}"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/mafengwo.jpg' %}"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/qzone.jpg' %}"></i></a></li>
 						</ul>	
                         <p class="home_team_info">Director</p>
                     </div>
@@ -208,11 +200,10 @@
                     <div class="mask">
                         <h4>Max payne</h4>
                         <ul class="social-icons2">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
-							<li><a href="#"><i class="fa fa-youtube"></i></a></li>
-							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/sina.jpg' %}"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/youku.jpg' %}"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/mafengwo.jpg' %}"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/qzone.jpg' %}"></i></a></li>
 						</ul>	
                         <p class="home_team_info">Manager</p>
                     </div>
@@ -224,11 +215,10 @@
                     <div class="mask">
                         <h4>Johnny Blaze</h4>
                         <ul class="social-icons2">
-							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A"><i class="fa fa-whatsapp"></i></a></li>
-							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A"><i class="fa fa-youtube"></i></a></li>
-							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A"><i class="fa fa-google-plus"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/sina.jpg' %}"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/youku.jpg' %}"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/mafengwo.jpg' %}"></i></a></li>
+							<li><a href="http://i.youku.com/i/UMzc5ODU4Mzcy?spm=a2h0j.8191423.subscription_wrap.DT~A" target="_blank"><i class="fa"><img src="{% static 'imgs/qzone.jpg' %}"></i></a></li>
 						</ul>	
                         <p class="home_team_info">Supervisor</p>
                     </div>
@@ -570,9 +560,113 @@
 </section>
 <!-- /我们的作品 -->
 
+<!-- testimonial section -->
+<section class="test">
+	<div class="container">
+		<h3 class="text-center">Our Testimonials</h3>
+		<p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+		<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="hover">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<div class="row">
+						<div class="col-lg-6 col-md-6">
+							<div class="test-details">	
+								<div class="test-w3ls">
+									<p class="test-p1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam convallis augue at auctor mollis. Aliquam sollicitudin accumsan scelerisque. Sed aliquet elit vitae ex posuere, a fringilla metus congue.</p>
+								</div>
+								<div class="test-agile">
+									<img src="images/test-img1.jpg" alt="w3layouts" title="w3layouts" class="img-circle img-responsive">
+									<h4>Kate Winslet,<span>Chairman</span></h4>
+									<div class="clearfix"></div>	
+								</div>
+							</div>	
+						</div>
+						<div class="col-lg-6 col-md-6">
+							<div class="test-details">
+								<div class="test-w3ls">
+									<p class="test-p1">In rutrum massa ut tempus finibus. Integer auctor pulvinar libero vitae varius. Phasellus eget placerat mauris. Pellentesque pretium, urna vitae finibus mattis, quam nisi vehicula dui, in tincidunt eros turpis eu velit.</p>
+								</div>
+								<div class="test-agile">
+									<img src="images/test-img2.jpg" alt="w3layouts" title="w3layouts" class="img-circle img-responsive">
+									<h4>Britney Spears,<span>Founder</span></h4>
+									<div class="clearfix"></div>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+				<div class="item">
+					<div class="row">
+						<div class="col-lg-6 col-md-6">
+							<div class="test-details">
+								<div class="test-w3ls">
+									<p class="test-p1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam convallis augue at auctor mollis. Aliquam sollicitudin accumsan scelerisque. Sed aliquet elit vitae ex posuere, a fringilla metus congue.</p>
+								</div>
+								<div class="test-agile">
+									<img src="images/test-img3.jpg" alt="w3layouts" title="w3layouts" class="img-circle img-responsive">
+									<h4>Julia Roberts,<span>Director</span></h4>
+									<div class="clearfix"></div>	
+								</div>
+							</div>
+						</div>	
+						<div class="col-lg-6 col-md-6">
+							<div class="test-details">	
+								<div class="test-w3ls">
+									<p class="test-p1">In rutrum massa ut tempus finibus. Integer auctor pulvinar libero vitae varius. Phasellus eget placerat mauris. Pellentesque pretium, urna vitae finibus mattis, quam nisi vehicula dui, in tincidunt eros turpis eu velit.</p>
+								</div>
+								<div class="test-agile">
+									<img src="images/test-img4.jpg" alt="w3layouts" title="w3layouts" class="img-circle img-responsive">
+									<h4>Monica Belucci,<span>Manager</span></h4>
+									<div class="clearfix"></div>	
+								</div>
+							</div>
+						</div>
+					</div> 
+				</div>	
+				<div class="item">
+					<div class="row">
+						<div class="col-lg-6 col-md-6">
+							<div class="test-details">	
+								<div class="test-w3ls">
+									<p class="test-p1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam convallis augue at auctor mollis. Aliquam sollicitudin accumsan scelerisque. Sed aliquet elit vitae ex posuere, a fringilla metus congue.</p>
+								</div>
+								<div class="test-agile">
+									<img src="images/test-img5.jpg" alt="w3layouts" title="w3layouts" class="img-circle img-responsive">
+									<h4>John Doe,<span>Supervisor</span></h4>
+									<div class="clearfix"></div>	
+								</div>
+							</div>
+						</div>	
+						<div class="col-lg-6 col-md-6">
+							<div class="test-details">	
+								<div class="test-w3ls">
+									<p class="test-p1">In rutrum massa ut tempus finibus. Integer auctor pulvinar libero vitae varius. Phasellus eget placerat mauris. Pellentesque pretium, urna vitae finibus mattis, quam nisi vehicula dui, in tincidunt eros turpis eu velit.</p>
+								</div>
+								<div class="test-agile">
+									<img src="images/test-img6.jpg" alt="w3layouts" title="w3layouts" class="img-circle img-responsive">
+									<h4>Natasha,<span>Chairman</span></h4>
+									<div class="clearfix"></div>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+</section>
+<!-- /testimonial section -->
+
 
 <!-- 静态背景 -->
-<section class="stats" id="stats">
+<section class="stats  stats_backgrand_img" id="stats">
 	<div class="container">	
 		<div class="row">
 			<div class="col-md-3 col-sm-3 stats-grid stats-grid-1">
