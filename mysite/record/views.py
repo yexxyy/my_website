@@ -2,8 +2,9 @@
 
 from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse,HttpResponseBadRequest
-from .models import Record
+from .models import Record,ContactData
 from django.http import Http404
+from django.views.decorators.csrf import csrf_exempt
 from django.template import loader
 
 #records list
@@ -60,6 +61,7 @@ def get_about_html(request):
     return render(request,'record/record_about.html')
 
 
+#存储用户提交的联系信息
 def store_user_commit_data(request):
     params=request.POST
     try:
@@ -67,7 +69,17 @@ def store_user_commit_data(request):
         mail=params['mail']
         phone=params['phone']
         message=params['message']
+
+        contectData = ContactData()
+        contectData.name = name
+        contectData.phone = phone
+        contectData.mail = mail
+        contectData.message = message
+        contectData.save()
+
     except:
-        return HttpResponseBadRequest("参数不正确")
+        return HttpResponseBadRequest("提交失败,请重试")
+
+    return HttpResponse("提交成功")
 
 
