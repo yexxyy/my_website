@@ -1,7 +1,7 @@
 #coding=utf-8
 
 from django.shortcuts import render
-from django.http import HttpResponse,JsonResponse
+from django.http import HttpResponse,JsonResponse,HttpResponseBadRequest
 from .models import Record
 from django.http import Http404
 from django.template import loader
@@ -31,7 +31,7 @@ def get_record_list(request,record_type):
 
 
 
-
+#获取记录详情
 @require_GET
 def get_record_detail(request,id):
     try:
@@ -50,9 +50,24 @@ def get_record_list_view(request):
     #或者:
     return render(request,'record/index.html')
 
-
+#获取业力实验室主页
 def get_home_html(request):
     return render(request, 'record/record_home.html')
 
+
+#获取:业力实验室>联系我们
 def get_about_html(request):
     return render(request,'record/record_about.html')
+
+
+def store_user_commit_data(request):
+    params=request.POST
+    try:
+        name=params['name']
+        mail=params['mail']
+        phone=params['phone']
+        message=params['message']
+    except:
+        return HttpResponseBadRequest("参数不正确")
+
+

@@ -150,7 +150,7 @@ UPLOADS_PATHS=[
     '/Users/yexianyong/Desktop/assets_upload',
     '/root/server/assets_upload',
 ]
-MEDIA_ROOT = UPLOADS_PATHS[2]
+MEDIA_ROOT = UPLOADS_PATHS[1]
 
 
 

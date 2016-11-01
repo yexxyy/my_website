@@ -9,7 +9,7 @@ from django.utils.encoding import python_2_unicode_compatible
 
 
 
-
+#图片上传路径
 def pic_upload_path(instance, filename):
     ext = filename.split('.')[-1]
     filename = '{}.{}'.format(uuid4().hex, ext)
@@ -18,12 +18,12 @@ def pic_upload_path(instance, filename):
 
 
 
-
+#记录model
 @python_2_unicode_compatible
 class Record(models.Model):
     class Meta:
         verbose_name='记录'
-        verbose_name_plural='我的流水账'
+        verbose_name_plural='时间轴'
 
     TYPE_CHOICES = (
         ('type_video', '视频'),
@@ -88,9 +88,12 @@ class Record(models.Model):
         }
         return this
 
-
+#摄影图片model
 @python_2_unicode_compatible
 class RecordImg(models.Model):
+    class Meta:
+        verbose_name_plural = '图片'
+
     record=models.ForeignKey(
         Record,
         on_delete=models.CASCADE,
@@ -121,3 +124,20 @@ class RecordImg(models.Model):
             'remarks':self.remarks,
         }
         return this
+
+
+#用户联系信息model
+@python_2_unicode_compatible
+class ContactData(models.Model):
+    class Meta:
+        verbose_name = '客户'
+        verbose_name_plural = '客户'
+
+    name=models.CharField(verbose_name='姓名',max_length=100,null=False,blank=False)
+    phone = models.CharField(verbose_name='电话', max_length=100, null=False, blank=False)
+    mail=models.CharField(verbose_name='邮箱',max_length=100,null=True,blank=True)
+    message=models.TextField(verbose_name='备注信息',null=True,blank=True)
+
+    def __str__(self):
+        return self.name
+
