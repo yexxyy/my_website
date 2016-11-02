@@ -80,6 +80,6 @@ def store_user_commit_data(request):
     except:
         return HttpResponseBadRequest("提交失败,请重试")
 
-    return render(request,'record/commit_result.html',name)
+    return render(request,'record/commit_result.html')
 
 

@@ -133,8 +133,8 @@ class ContactData(models.Model):
         verbose_name = '客户'
         verbose_name_plural = '客户'
 
-    name=models.CharField(verbose_name='姓名',max_length=100,null=False,blank=False)
-    phone = models.CharField(verbose_name='电话', max_length=100, null=False, blank=False)
+    name=models.CharField(verbose_name='姓名', max_length = 100 , null = False , blank = False)
+    phone = models.CharField(verbose_name='电话', max_length=100, null=True,blank=True)
     mail=models.CharField(verbose_name='邮箱',max_length=100,null=True,blank=True)
     message=models.TextField(verbose_name='备注信息',null=True,blank=True)
 
