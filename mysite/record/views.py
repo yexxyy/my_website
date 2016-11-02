@@ -64,11 +64,13 @@ def get_about_html(request):
 #存储用户提交的联系信息
 def store_user_commit_data(request):
     params=request.POST
+
+    print params
     try:
-        name=params['name']
-        mail=params['mail']
-        phone=params['phone']
-        message=params['message']
+        name=params.get('name')
+        mail=params.get('email')
+        phone=params.get('phone')
+        message=params.get('message')
 
         contectData = ContactData()
         contectData.name = name
@@ -76,10 +78,9 @@ def store_user_commit_data(request):
         contectData.mail = mail
         contectData.message = message
         contectData.save()
-
     except:
         return HttpResponseBadRequest("提交失败,请重试")
+    return HttpResponse("提交成功")
 
-    return render(request,'record/commit_result.html')
 
 

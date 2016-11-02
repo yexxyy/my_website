@@ -116,24 +116,24 @@
 		</div>
 		<div class="col-lg-6 col-md-6 contact-wthree2">
 			<h3 class="head2">您的信息</h3>
-			<form action="contact/" method="post">
+			<form id="contact_info_form"> <!-- action="contact/" method="post" -->
 				{% csrf_token %}
 				<div class="row">
 					<div class="form-group col-lg-6 col-md-6 col-sm-6 slideanim">
-						<input type="text" class="form-control first-name" name="name" placeholder="您的姓名" required style="background-color:transparent"/>
+						<input type="text" class="form-control first-name" name="name" placeholder="您的姓名" required style="background-color:transparent" id="contact_info_name" />
 					</div>
 					<div class="form-group col-lg-6 col-md-6 col-sm-6 slideanim">
-						<input type="email" class="form-control mail" name="mail" placeholder="您的邮箱" required style="background-color:transparent"/>
+						<input type="email" class="form-control mail" name="email" placeholder="您的邮箱" required style="background-color:transparent" id="contact_info_email" />
 					</div>
 					<div class="form-group col-lg-6 col-md-6 col-sm-6 slideanim">
-						<input type="tel" class="form-control pno" name="phone" placeholder="您的电话号码" required style="background-color:transparent"/>
+						<input type="tel" class="form-control pno" name="phone" placeholder="您的电话号码" required style="background-color:transparent" id="contact_info_phone" />
 					</div>
 					<div class="clearfix"></div>
 					<div class="form-group col-lg-12 slideanim">
-						<textarea class="form-control" rows="6" name="message" placeholder="备注信息,请填写您需要的服务内容. 比如:手机软件开发/网页制作/摄影约拍/婚礼摄像之类..." style="background-color:transparent"></textarea>
+						<textarea class="form-control" rows="6" name="message" placeholder="备注信息,请填写您需要的服务内容. 比如:手机软件开发/网页制作/摄影约拍/婚礼摄像之类..." style="background-color:transparent" id="contact_info_message"></textarea>
 					</div>
 					<div class="form-group col-lg-12 slideanim">
-						<button type="submit" class="btn btn-lg btn-outline">发送</button>
+						<button class="btn btn-lg btn-outline" id='contact-info-submit'>发送</button>
 					</div>
 				</div>
 			</form>

@@ -7,16 +7,45 @@ var temp_publish_date
 var today_str
 var yesterday_str
 
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+var csrftoken = getCookie('csrftoken');
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+});
+
     //文档就绪函数
 $(document).ready(function(){
 	get_current_time()
 
   	get_home_page()
-	navbar_click()
+	hook_callbacks()
 });
 
+
 //导航栏点击事件
-function navbar_click(){
+function hook_callbacks(){
 
 	$("#demo-navbar .container  a").click(function(){
 		//让展开视图缩回
@@ -36,6 +65,8 @@ function navbar_click(){
 			
 		}
 	})
+
+	$(document).on('click', '#contact-info-submit', contact_form_submit)
 }
 
 //联系我们
@@ -254,4 +285,27 @@ function create_type_travel_program_html(object){
 	$container.append($elem) //在容器结尾放入元素
 
 }
+
+//用户提交联系信息
+function contact_form_submit(e) {
+
+	e.preventDefault()
+	var form_data = new FormData($('form#contact_info_form')[0])
+	console.log(form_data)
+	
+	$.ajax({
+		url: '/record/contact/',
+		type: 'post',
+		data: form_data,
+		contentType: false,
+		processData: false,
+		success: function (response) {
+			console.log(response)
+		},
+		error: function (xhr, err, msg) {
+			console.log(xhr, err, msg)
+		}
+	})
+}
+
 
