@@ -1,5 +1,6 @@
 
-host='http://'+window.location.host
+//host='http://'+window.location.host
+host='http://23.106.145.39:8000'
 
 //全局变量,用于保存发布时间
 var temp_publish_date
