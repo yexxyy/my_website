@@ -295,7 +295,7 @@ function contact_form_submit(e) {
 	console.log(form_data)
 	
 	$.ajax({
-		url: '/record/contact/',
+		url: host+ '/record/contact/',
 		type: 'post',
 		data: form_data,
 		contentType: false,
