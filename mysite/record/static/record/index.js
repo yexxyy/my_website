@@ -302,9 +302,11 @@ function contact_form_submit(e) {
 		processData: false,
 		success: function (response) {
 			console.log(response)
+			alert("恭喜你提交成功!")
 		},
 		error: function (xhr, err, msg) {
 			console.log(xhr, err, msg)
+			alert("提交失败,还是直接联系qq:57032d1129吧")
 		}
 	})
 }
