@@ -306,7 +306,7 @@ function contact_form_submit(e) {
 		},
 		error: function (xhr, err, msg) {
 			console.log(xhr, err, msg)
-			alert("提交失败,还是直接联系qq:57032d1129吧")
+			alert("不好意思,这里有个bug暂时还没解决;直接联系qq:570321129,或者微信:yeshifu_599吧")
 		}
 	})
 }
