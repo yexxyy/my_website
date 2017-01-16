@@ -173,8 +173,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-#when diploy nginx server , we need collect all django's static files
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+
 
 
 
