@@ -29,6 +29,10 @@ ALLOWED_HOSTS = []
 
 DEFAULT_CHARSET = 'utf-8'
 
+
+HOST=''
+
+
 # Application definition
 
 INSTALLED_APPS = [
