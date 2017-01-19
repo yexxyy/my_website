@@ -23,11 +23,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '%^m4f51abqr^5t-!pw@5rvq*sp*4t8t65xm3$bpw6%wh6oi%m4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
 
 ALLOWED_HOSTS = []
 
 DEFAULT_CHARSET = 'utf-8'
+
+
+HOST=''
+
 
 # Application definition
 
@@ -173,27 +177,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-#when diploy nginx server , we need collect all django's static files
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
-
-
-UPLOADS_PATHS=[
-    '/Users/yetongxue/Desktop/assets_upload',
-    '/Users/yexianyong/Desktop/assets_upload',
-    '/root/my_website_server/upload_assets',
-]
-MEDIA_ROOT = UPLOADS_PATHS[2]
 
 
 
 
-
-CACHE_ROOT_PATHS=[
-    '/Users/yetongxue/Desktop/assets_upload',
-    '/Users/yexianyong/Desktop/assets_upload',
-    '/root/my_website_server/upload_assets',
-]
-IMAGE_CACHE_ROOT=CACHE_ROOT_PATHS[2]
 
 
 

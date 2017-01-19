@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse,HttpResponseBadRequest
 from .models import Record,ContactData
 from django.http import Http404
+from django.conf import settings
 from django.views.decorators.csrf import csrf_exempt
 from django.template import loader
 
@@ -48,8 +49,10 @@ def get_record_list_view(request):
     # template = loader.get_template('record/record_list.html')
     # return HttpResponse(template.render(request))
 
+    # get js host
+    host=settings.HOST
     #或者:
-    return render(request,'record/index.html')
+    return render(request,'record/index.html',{'host':host})
 
 #获取业力实验室主页
 def get_home_html(request):
