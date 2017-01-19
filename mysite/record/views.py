@@ -49,10 +49,8 @@ def get_record_list_view(request):
     # template = loader.get_template('record/record_list.html')
     # return HttpResponse(template.render(request))
 
-    # get js host
-    host=settings.HOST
     #或者:
-    return render(request,'record/index.html',{'host':host})
+    return render(request,'record/index.html')
 
 #获取业力实验室主页
 def get_home_html(request):
