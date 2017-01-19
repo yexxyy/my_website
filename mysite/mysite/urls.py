@@ -17,10 +17,12 @@ from django.conf.urls import url,include
 from django.contrib import admin
 from . import views
 from django.conf import settings
+import record.views as record_view
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$',views.index,name='home'),
+    url(r'^$',record_view.get_record_list_view,name='home'),
     url(r'^resources/(?P<file_path>.*)',views.get_pictures),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 
