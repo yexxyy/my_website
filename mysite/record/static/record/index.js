@@ -9,33 +9,7 @@ var temp_publish_date
 var today_str
 var yesterday_str
 
-function getCookie(name) {
-    var cookieValue = null;
-    if (document.cookie && document.cookie !== '') {
-        var cookies = document.cookie.split(';');
-        for (var i = 0; i < cookies.length; i++) {
-            var cookie = jQuery.trim(cookies[i]);
-            // Does this cookie string begin with the name we want?
-            if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
-            }
-        }
-    }
-    return cookieValue;
-}
-var csrftoken = getCookie('csrftoken');
-function csrfSafeMethod(method) {
-    // these HTTP methods do not require CSRF protection
-    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-}
-$.ajaxSetup({
-    beforeSend: function(xhr, settings) {
-        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-            xhr.setRequestHeader("X-CSRFToken", csrftoken);
-        }
-    }
-});
+
 
     //文档就绪函数
 $(document).ready(function(){
@@ -68,7 +42,6 @@ function hook_callbacks(){
 		}
 	})
 
-	$(document).on('click', '#contact-info-submit', contact_form_submit)
 }
 
 //联系我们
@@ -288,28 +261,5 @@ function create_type_travel_program_html(object){
 
 }
 
-//用户提交联系信息
-function contact_form_submit(e) {
-
-	e.preventDefault()
-	var form_data = new FormData($('form#contact_info_form')[0])
-	console.log(form_data)
-	
-	$.ajax({
-		url: host+ '/record/contact/',
-		type: 'post',
-		data: form_data,
-		contentType: false,
-		processData: false,
-		success: function (response) {
-			console.log(response)
-			alert("恭喜你提交成功!")
-		},
-		error: function (xhr, err, msg) {
-			console.log(xhr, err, msg)
-			alert("不好意思,这里有个bug暂时还没解决;直接联系qq:570321129,或者微信:yeshifu_599吧")
-		}
-	})
-}
 
 

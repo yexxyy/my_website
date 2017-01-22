@@ -80,8 +80,8 @@ def store_user_commit_data(request):
         contectData.message = message
         contectData.save()
     except:
-        return HttpResponseBadRequest("提交失败,请重试")
-    return HttpResponse("提交成功")
+        pass
+    return get_record_list_view(request)
 
 
 
